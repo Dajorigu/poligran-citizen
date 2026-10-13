@@ -1,0 +1,16 @@
+<article class="card" [class.large]="large()">
+  @if (news().imagen) {
+    <img [src]="news().imagen" [alt]="news().titulo" loading="lazy" />
+  }
+  <app-favorite-button
+    class="fav-pos"
+    [active]="favorite()"
+    [label]="news().titulo"
+    (toggle)="toggleFavorite.emit(news().id)"
+  />
+  <h3><button type="button" class="title-btn" (click)="open.emit(news())">{{ news().titulo }}</button></h3>
+  <p>
+    {{ news().resumen }}
+    <button type="button" class="more" (click)="open.emit(news())">Ver más</button>
+  </p>
+</article>

@@ -1,0 +1,9 @@
+{
+  "temas": ["Universidad", "Fuerza Aérea", "Tensión Otán", "Venezuela"],
+  "noticias": [
+    {"id": 1, "tipo": "principal", "titulo": "¿Es legal que la Fuerza Pública entre a las universidades? Esto dice la norma tras el anuncio del presidente", "resumen": "", "imagen": null, "temas": ["Universidad"]},
+    {"id": 2, "tipo": "secundaria", "titulo": "Alex Saab, señalado testaferro de Nicolás Maduro, se declarará culpable en EE. UU. por caso de lavado de dinero", "resumen": "El empresario barranquillero ya había estado preso en EE. UU. y había sido entregado por Joe Biden.", "imagen": "assets/saab.jpg", "temas": ["Venezuela"]},
+    {"id": 3, "tipo": "secundaria", "titulo": "Fuerte temblor de 4,9 sacude a Itsmina y genera susto en Valle del Cauca y Eje Cafetero: van varios movimientos", "resumen": "El Servicio Geológico Colombiano entregó detalles del movimiento telúrico de este 14 de septiembre.", "imagen": "assets/temblor.jpg", "temas": []},
+    {"id": 4, "tipo": "destacada", "titulo": "Ministerio del Trabajo inspecciona tienda de Zara en Bogotá para verificar cumplimiento de normas laborales", "resumen": "La diligencia se realiza sin previo aviso y revisa obligaciones laborales, seguridad social y condiciones de trabajo.", "imagen": "assets/zara.jpg", "temas": []}
+  ]
+}

@@ -1,0 +1,9 @@
+.layout { display: grid; grid-template-columns: 1.05fr 1fr; gap: 28px; margin-top: 28px; }
+.col-left { border-right: 1px solid var(--line); padding-right: 28px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.status { grid-column: 1 / -1; text-align: center; font-style: italic; padding: 40px 0; }
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+  .col-left { border-right: 0; padding-right: 0; }
+  .grid-2 { grid-template-columns: 1fr; }
+}

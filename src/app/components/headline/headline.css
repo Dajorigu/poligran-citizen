@@ -1,0 +1,7 @@
+.headline { font-family: var(--serif); font-weight: 700; font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.5; margin: 0 0 16px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.text { background: none; border: 0; padding: 0; text-align: left; font: inherit; color: var(--fg); cursor: pointer; }
+.more { background: none; border: 0; padding: 0; margin: 0 8px; font-family: var(--body); font-weight: 700; font-size: .9rem; text-transform: uppercase; color: var(--fg); cursor: pointer; }
+.text:hover, .more:hover { color: var(--accent); }
+app-favorite-button { vertical-align: middle; }
+:host ::ng-deep .fav { border: 1px solid var(--line); background: none; color: var(--fg); }
+:host ::ng-deep .fav.on { background: #c0392b; color: #fff; border-color: #c0392b; }

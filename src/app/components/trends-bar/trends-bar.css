@@ -1,0 +1,4 @@
+.trends { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; justify-content: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 8px 0; font-family: var(--nav); font-size: 1.4rem; }
+.label { color: var(--accent); font-weight: 600; }
+.chip { background: none; border: 0; border-bottom: 2px solid transparent; font-family: var(--nav); font-size: 1.4rem; font-weight: 600; padding: 2px 4px; color: var(--fg); cursor: pointer; }
+.chip[aria-pressed='true'] { color: var(--accent); border-bottom-color: var(--accent); }

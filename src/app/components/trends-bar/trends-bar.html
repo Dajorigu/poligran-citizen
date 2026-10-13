@@ -1,0 +1,11 @@
+<nav class="trends" aria-label="Tendencias">
+  <span class="label">Tendencias:</span>
+  @for (tema of temas(); track tema) {
+    <button type="button" class="chip" [attr.aria-pressed]="selected() === tema" (click)="selectTema.emit(tema)">
+      {{ tema }}
+    </button>
+  }
+  <button type="button" class="chip" [attr.aria-pressed]="onlyFavorites()" (click)="toggleFavorites.emit()">
+    ♥ Favoritos {{ favoritesCount() }}
+  </button>
+</nav>

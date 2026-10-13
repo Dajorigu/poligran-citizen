@@ -1,0 +1,61 @@
+<app-header (loginClick)="loginOpen.set(true)" />
+
+<app-trends-bar
+  [temas]="news.temas()"
+  [selected]="tema()"
+  [onlyFavorites]="onlyFavs()"
+  [favoritesCount]="favs.count()"
+  (selectTema)="toggleTema($event)"
+  (toggleFavorites)="onlyFavs.set(!onlyFavs())"
+/>
+
+<main class="layout">
+  @if (news.loading()) {
+    <p class="status">Cargando noticias…</p>
+  } @else if (news.error()) {
+    <p class="status">{{ news.error() }}</p>
+  } @else {
+    <section class="col-left" aria-label="Noticias principales">
+      @for (n of principales(); track n.id) {
+        <app-headline [news]="n" [favorite]="favs.has(n.id)" (open)="selected.set($event)" (toggleFavorite)="favs.toggle($event)" />
+      }
+      <div class="grid-2">
+        @for (n of secundarias(); track n.id) {
+          <app-news-card [news]="n" [favorite]="favs.has(n.id)" (open)="selected.set($event)" (toggleFavorite)="favs.toggle($event)" />
+        }
+      </div>
+    </section>
+
+    <aside class="col-right" aria-label="Noticia destacada">
+      @for (n of destacadas(); track n.id) {
+        <app-news-card [news]="n" [large]="true" [favorite]="favs.has(n.id)" (open)="selected.set($event)" (toggleFavorite)="favs.toggle($event)" />
+      }
+    </aside>
+
+    @if (emptyMessage()) {
+      <p class="status">{{ emptyMessage() }}</p>
+    }
+  }
+</main>
+
+<app-footer (contactClick)="contactOpen.set(true)" />
+
+@if (loginOpen()) {
+  <app-modal label="Iniciar sesión" (close)="loginOpen.set(false)">
+    <app-login-form (submitted)="onLogin($event)" />
+  </app-modal>
+}
+
+@if (contactOpen()) {
+  <app-modal label="Contáctenos" (close)="contactOpen.set(false)">
+    <app-contact-form (sent)="onContactSent()" />
+  </app-modal>
+}
+
+@if (selected(); as n) {
+  <app-modal [label]="n.titulo" (close)="selected.set(null)">
+    <app-news-detail [news]="n" />
+  </app-modal>
+}
+
+<app-toast />

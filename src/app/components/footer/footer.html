@@ -1,0 +1,19 @@
+<footer class="foot">
+  <p class="copy"><strong>Poligran citizen.<br />Todos los derechos reservados</strong></p>
+
+  <ul class="links">
+    @for (link of links; track link) {
+      <li><a href="#">{{ link }}</a></li>
+    }
+  </ul>
+
+  <div class="contact">
+    <strong>Contáctenos:</strong>
+    @for (s of socials; track s.name) {
+      <a class="social" [href]="s.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="s.name" [title]="s.name">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path [attr.d]="s.path" /></svg>
+      </a>
+    }
+    <button type="button" class="btn-outline" (click)="contactClick.emit()">Escríbenos</button>
+  </div>
+</footer>

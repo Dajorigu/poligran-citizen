@@ -1,0 +1,2 @@
+.fav { width: 38px; height: 38px; border-radius: 50%; border: 0; background: rgba(255,255,255,.9); color: #c0392b; font-size: 1.3rem; line-height: 1; cursor: pointer; }
+.fav.on { background: #c0392b; color: #fff; }

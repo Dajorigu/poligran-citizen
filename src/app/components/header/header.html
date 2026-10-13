@@ -1,0 +1,19 @@
+<header class="top">
+  <button type="button" class="btn-outline" (click)="onSession()">
+    {{ auth.loggedIn() ? 'Cerrar sesión' : 'Iniciar sesión' }}
+  </button>
+
+  <button
+    type="button"
+    class="theme-toggle"
+    role="switch"
+    aria-label="Modo oscuro"
+    [attr.aria-checked]="theme.mode() === 'dark'"
+    [class.dark]="theme.mode() === 'dark'"
+    (click)="theme.toggle()"
+  >
+    <span class="ico sun">☀</span><span class="ico moon">☾</span>
+  </button>
+
+  <h1 class="brand"><a href="./">Poligran Citizen</a></h1>
+</header>

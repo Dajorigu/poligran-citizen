@@ -1,0 +1,28 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+  <h2>Contáctenos</h2>
+
+  <div class="field">
+    <label for="c-nombre">Nombre</label>
+    <input id="c-nombre" type="text" formControlName="nombre" autocomplete="name" [attr.aria-invalid]="!!error('nombre')" />
+    <small class="error">{{ error('nombre') }}</small>
+  </div>
+
+  <div class="field">
+    <label for="c-correo">Correo electrónico</label>
+    <input id="c-correo" type="email" formControlName="correo" autocomplete="email" [attr.aria-invalid]="!!error('correo')" />
+    <small class="error">{{ error('correo') }}</small>
+  </div>
+
+  <div class="field">
+    <label for="c-mensaje">Mensaje</label>
+    <textarea id="c-mensaje" rows="4" formControlName="mensaje" [attr.aria-invalid]="!!error('mensaje')"></textarea>
+    <small class="error">{{ error('mensaje') }}</small>
+  </div>
+
+  <div class="field check">
+    <label><input type="checkbox" formControlName="acepto" /> Acepto la política de privacidad</label>
+    <small class="error">{{ error('acepto') }}</small>
+  </div>
+
+  <button class="btn-solid" type="submit">Enviar</button>
+</form>
